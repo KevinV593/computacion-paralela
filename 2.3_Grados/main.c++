@@ -28,7 +28,7 @@ int main () {
     while (getline(archivo,linea)) {
         std::stringstream sss (linea);
 
-        //Vectores para diseccionar
+        //Variables para diseccionar
         std::string datoId;
         std::string datoTemperatura;
         std::string datoHumedad;
