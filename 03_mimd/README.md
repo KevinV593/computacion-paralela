@@ -3,7 +3,7 @@
 La cantidad de Hilos y su distribución dependen del diseño de la simulación y de la cantidad de tareas (procesos), más no del número de datos.
 
 ### Instrucción:
-Realizar en C++, un programa que realice los siguientes cálculos mediante los datos del dataset [`datos_mind.csv`](./datos_mind.csv) en los hilos correspondientes:
+Realizar en C++, un programa que realice los siguientes cálculos mediante los datos del dataset [datos_mind.csv](./datos_mind.csv) en los hilos correspondientes:
 
 #### Hilo 1: Índice de Masa Corporal (IMC)
 Fórmula:    Peso[kg] / Altura[m2]
