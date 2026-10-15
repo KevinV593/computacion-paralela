@@ -75,7 +75,7 @@ int main () {
         p.altura = stod(datoAltura);
         p.cintura = stod(datoCintura);
         p.cadera = stod(datoCadera);
-        paciente.push_back(p); //
+        paciente.push_back(p);
     }
     //6. Chao Archivo
     archivo.close();
@@ -127,7 +127,7 @@ int main () {
         for (int i = inicio3; i < fin3; i++) {
             double alturaCm = paciente[i].altura*100;
             double peso = paciente[i].peso;
-            resultados[i] = sqrt(
+            resultados[i] = std::sqrt(
                 (alturaCm * peso) / 3600
             );
             indicadores[i] = "BSA";
@@ -146,8 +146,14 @@ int main () {
 
     std::cout<< "RESULTADOS: "<< std::endl;
     for (int i = 0; i < total; i++) {
-        std::cout<<"PACIENTE Nro."<<paciente[i].id<<": "<< std::endl;
-        std::cout<<"Edad"<<paciente[i].edad<<": "<< std::endl;
-        std::cout<<"Sexo"<<paciente[i].sexo<<": "
+        std::cout<<"PACIENTE Nro."<<paciente[i].id<<",";
+        std::cout<<"'Edad'::"<<paciente[i].edad<<",";
+        std::cout<<"'Sexo':"<<paciente[i].sexo<<",";
+        std::cout<<"'Peso':"<<paciente[i].peso<<",";
+        std::cout<<"'Altura':"<<paciente[i].altura<<",";
+        std::cout<<"'Cintura'"<<paciente[i].cintura<<",";
+        std::cout<<"'Cadera':"<<paciente[i].cadera<<std::endl;
+        std::cout<<indicadores[i]<<" => "<<resultados[i]<<std::endl;
     }
+    std::cout<<"Tiempo de Ejecución Total: "<<tiempo_total.count()<<" microsegundos."<<std::endl;
 }
