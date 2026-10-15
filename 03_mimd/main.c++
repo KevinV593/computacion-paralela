@@ -8,6 +8,7 @@
 #include <sstream>
 #include <iomanip>
 
+
 struct Paciente {
     int id;
     int edad;
