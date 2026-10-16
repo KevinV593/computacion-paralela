@@ -3,7 +3,7 @@
 La cantidad de Hilos y su distribución dependen del diseño de la simulación y de la cantidad de tareas (procesos), más no del número de datos.
 
 ### Instrucción:
-Realizar en C++, un programa que realice los siguientes cálculos mediante los datos del dataset [datos_mind.csv](./datos_mind.csv) en los hilos correspondientes:
+Realizar en C++ un programa que realice los siguientes cálculos mediante los datos del dataset [datos_mind.csv](./datos_mind.csv), asignando a cada hilo las tareas correspondientes:
 
 #### Hilo 1: Índice de Masa Corporal (IMC)
 Fórmula:    Peso[kg] / Altura[m2]
@@ -14,3 +14,5 @@ Rango:      101 a 200
 #### Hilo 3: Superficie Corporal (BSA)
 Fórmula: sqrt(Altura[cm] * Peso[kg] / 3600)
 Rango:      201 a 300
+
+Adicionalmente, medir el tiempo total de ejecución en microsegundos.

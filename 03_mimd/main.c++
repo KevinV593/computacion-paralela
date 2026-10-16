@@ -94,7 +94,7 @@ int main () {
 
     //5. Hilos LAMBDA & Logica (MEDIR TIEMPO)
 
-    auto empezar = std::chrono::high_resolution_clock::now();
+    auto inicio = std::chrono::high_resolution_clock::now();
     //6. HILOS & LOGICA
     std::thread h1([&]() {
         for(int i = inicio1; i < fin1; i++) {
@@ -131,7 +131,7 @@ int main () {
 
     auto fin = std::chrono::high_resolution_clock::now();
 
-    std::chrono::duration <double, std::micro> tiempo_total = fin - empezar;
+    std::chrono::duration <double, std::micro> tiempo_total = fin - inicio;
 
     std::cout << std::fixed << std::setprecision(4);
 
