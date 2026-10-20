@@ -10,29 +10,28 @@ litros=[]
 
 # r permiss de lectura
 # newline cada linea
-with open("datos.csv", "r",
+with open("datos.csv", "r",         #permisos de lectura, caracteres esp
           encoding="utf-8-sig", newline="") as archivo:
     lector = csv.reader(archivo)
     next(lector)
     for fila in lector:
-        id.append(fila[0])
-        litros.append(fila[1])
-        
+        id.append(int (fila[0]))
+        litros.append(float (fila[1]))
     print("Datos cargados correctamente")
     print("Numero de elementos cargados: ", len(id))
 
-#por que len?
+#por que len? 
 mililitros = [0.0] * len(litros)
 centilitros = [0.0] * len(litros)
 metros_cubicos = [0.0] * len(litros)
 
 def convertir_mililitros():
-    #desde cero
+    #desde cero a 999
     for i in range(len(litros)):
         mililitros[i] = litros[i] * 1000
 
 def convertir_centilitros():
-    #desde cero
+    #desde cero 
     for i in range(len(litros)):
         centilitros[i] = litros[i] * 100
 
@@ -58,7 +57,7 @@ h3.join()
 fin = time.perf_counter_ns()
 tiempo = (fin - inicio) / 1000000 #milisengundos
 
-for i in range (len(id)):
+for i in range(len(id)):
     print("\n---------------")
     print("REGISTRO ", id[i])
     print("Litros = ",litros[i])
@@ -66,4 +65,49 @@ for i in range (len(id)):
     print("Centilitros = ", centilitros[i])
     print("Metros Cubicos = ", metros_cubicos[i])
     print("\n")
-    print(f"TIEMPO: {tiempo:.4f} ms")
+    
+print("Primer Registro:", id[0] )
+print("Ultimo Registro:", id[-1] )
+print("TOTAL REGISTROS: ", len(id))
+
+print(f"TIEMPO: {tiempo:.4f} ms")
+    
+#BASE DE DATOS
+
+conexion = None
+cursor = None
+
+try:
+    conexion = conectar_mysql()
+    cursor = conexion.cursor()
+    print("Conexión Exitosa a la base de datos MySQL")
+    ### DUPLICATE ... actualiza el id
+    sql_original = """
+        INSERT INTO registros_litros (id, litros)
+        VALUES (%s, %s)
+        ON DUPLICATE KEY UPDATE litros = VALUES(litros)
+    """
+    #id y fechaprocsamiento ya se registrarn en auto
+    sql_resultado = """
+        INSERT INTO resultados_conversion
+        (registro_id, mililitros, centilitros,
+        metros_cubicos, tiempo_microsegundos)
+        VALUES (%s, %s, %s, %s, %s)
+    """
+    for i in range(len(litros)):
+        cursor.execute(sql_original, (id[i], litros[i]))
+        cursor.execute(sql_resultado, (id[i], mililitros[i], centilitros[i], metros_cubicos[i], tiempo))
+    conexion.commit()
+    print("\n Datos Guardados CORRECTAMENTE")
+    print("\n REGISTROS GUARDADOS = ", len(id))
+
+except mysql.connector.Error as error:
+    if conexion is not None:
+        conexion.rollback()
+    print(f"Error al guardar datos: {error}")
+    
+finally:
+    if cursor is not None:
+        cursor.close()
+    if cursor is not None and conexion.is_connected():
+        conexion.close()
