@@ -21,9 +21,9 @@ struct Paciente {
 
 int main () {
     //1. ARCHIVO
-    std::ifstream archivo ("/mnt/garage/code/paralela/3_MIMD/datos_mind.csv");
+    std::ifstream archivo ("/mnt/garage/code/paralela/03_mimd/datos_mimd.csv");
      if (!archivo.is_open()) {
-        std::cout<<"Error: No se puede abrir datos.csv" << std::endl;
+        std::cout<<"Error: No se puede abrir datos_mind.csv" << std::endl;
         return 1;
     }
     //2. VECTORES
