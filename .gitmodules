@@ -1,0 +1,3 @@
+[submodule "mimd-simd-misd-python"]
+	path = mimd-simd-misd-python
+	url = https://github.com/KevinV593/mimd-simd-misd-python.git
