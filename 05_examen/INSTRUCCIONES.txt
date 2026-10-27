@@ -1,0 +1,20 @@
+EXAMEN PRÁCTICO C++ - COMPUTACIÓN PARALELA
+Estudiante: KEVIN ALEXANDER VACA GUAMAN
+Arquitectura asignada: MISD
+Tema: Consumo eléctrico
+Registros: 100
+Duración: 60 minutos
+
+Operación 1: Consumo: CE = lectura_actual − lectura_anterior
+Operación 2: Costo: C = (lectura_actual − lectura_anterior) × tarifa
+Operación 3: Promedio diario: PD = (lectura_actual − lectura_anterior) / dias
+
+Columnas del CSV: id,vivienda,lectura_anterior,lectura_actual,tarifa,dias
+
+Implementación indicada:
+3 hilos: cada hilo calcula un indicador diferente para los mismos 100 registros; vectores de salida separados.
+
+REQUISITOS:
+Leer datos.csv con ifstream y stringstream. Utilizar vectores, 3 hilos std::thread, join y chrono. Mostrar resultados, cantidad de registros y tiempo en microsegundos. No se requiere MySQL.
+
+NOTA: datos sintéticos. Para la arquitectura SIMD se utiliza un modelo didáctico con partición de datos mediante hilos, no instrucciones vectoriales SIMD de CPU. MISD es también una analogía didáctica.
