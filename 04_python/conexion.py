@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         conexion = conectar_mysql()
         if conexion.is_connected():
-            print("Conexion Exitosa a:")
+            print("Conexión Exitosa a:")
             print("basemisd")
             conexion.close()
     except mysql.connector.Error as error:
