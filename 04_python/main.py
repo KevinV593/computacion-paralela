@@ -8,9 +8,7 @@ import mysql.connector
 id=[]
 litros=[]
 
-# r permiss de lectura
-# newline cada linea
-with open("datos.csv", "r",         #permisos de lectura, caracteres esp
+with open("datos.csv", "r",        
           encoding="utf-8-sig", newline="") as archivo:
     lector = csv.reader(archivo)
     next(lector)
@@ -55,7 +53,7 @@ h2.join()
 h3.join()
 
 fin = time.perf_counter_ns()
-tiempo = (fin - inicio) / 1000000 #milisengundos
+tiempo = (fin - inicio) / 1000000 # milisengundos pero en la base pusimos micro pss
 
 for i in range(len(id)):
     print("\n---------------")
