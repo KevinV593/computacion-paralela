@@ -85,6 +85,7 @@ seleccionados = st.sidebar.multiselect(
     options=registros,
     default=registros
 )
+
 filtrados = datos[
     datos["registro"].isin(seleccionados)
 ].copy()
@@ -93,9 +94,6 @@ unidad = st.sidebar.selectbox(
     "Unidad de conversion",
     ["mililitros", "centilitros", "metros_cubicos"]
 )
-
-
-
 
 # ==========================================
 # 5. INDICADORES GENERALES

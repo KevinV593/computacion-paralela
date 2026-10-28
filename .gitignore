@@ -1,0 +1,42 @@
+
+# ==============================
+# ENTORNOS VIRTUALES DE PYTHON
+# ==============================
+venv/
+.venv/
+env/
+ENV/
+
+# ==============================
+# CACHÉ DE PYTHON
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==============================
+# CACHÉ Y HERRAMIENTAS
+# ==============================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# ==============================
+# CONFIGURACIÓN LOCAL
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# EDITORES E IDE
+# ==============================
+.vscode/
+.idea/
+
+# ==============================
+# SISTEMA OPERATIVO
+# ==============================
+.DS_Store
+Thumbs.db
