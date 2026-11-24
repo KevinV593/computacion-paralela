@@ -1,0 +1,11 @@
+id_producto,nombre,categoria,precio,cantidad
+1,Laptop,Computadoras,850,50
+2,Mouse,Perifericos,18,150
+3,Teclado,Perifericos,35,100
+4,Monitor,Pantallas,220,80
+5,Impresora,Impresion,180,30
+6,Disco SSD,Almacenamiento,95,60
+7,Memoria RAM,Componentes,75,90
+8,Webcam,Perifericos,45,40
+9,Router,Redes,120,35
+10,Proyector,Multimedia,650,15
