@@ -49,20 +49,38 @@ for id_producto, producto in inventario.items():
                 print("STOCK INSUFICIENTE")
                 print("STOCK RESTANTE", producto["cantidad"])
 
-h1 = threading.Thread(target=realizar_pedido, args=("Operador 1", 1, 20))
-h2 = threading.Thread(target=realizar_pedido, args=("Operador 2", 1, 15))
-h3 = threading.Thread(target=realizar_pedido, args=("Operador 3", 2, 30))
-h4 = threading.Thread(target=realizar_pedido, args=("Operador 4", 1, 25))
+#EJECICIO 
+h1 = threading.Thread(target=realizar_pedido, args=("Operador 1", 2, 50))
+h2 = threading.Thread(target=realizar_pedido, args=("Operador 2", 2, 50))
+h3 = threading.Thread(target=realizar_pedido, args=("Operador 3", 2, 50))
+
+h4 = threading.Thread(target=realizar_pedido, args=("Operador 4", 5, 20))
+h5 = threading.Thread(target=realizar_pedido, args=("Operador 5", 5, 10))
+h6 = threading.Thread(target=realizar_pedido, args=("Operador 6", 5, 30))
+
+h7 = threading.Thread(target=realizar_pedido, args=("Operador 7", 8, 15))
+h8 = threading.Thread(target=realizar_pedido, args=("Operador 8", 8, 15))
+h9 = threading.Thread(target=realizar_pedido, args=("Operador 9", 8, 15))
 
 h1.start()
 h2.start()
 h3.start()
 h4.start()
+h5.start()
+h6.start()
+h7.start()
+h8.start()
+h9.start()
 
 h1.join()
 h2.join()
 h3.join()
 h4.join()
+h5.join()
+h6.join()
+h7.join()
+h8.join()
+h9.join()
 
 print("INVENTARIO FINAL")
 for id_producto, producto in inventario.items():
@@ -73,3 +91,16 @@ for id_producto, producto in inventario.items():
     )
 
 print("INVENTARIO FINAL")
+
+
+#CARGAR 10 HILOS U OPERADORES DONDE:
+# LOS PRIMEROS TRES OPERADORES 
+# Operador 1, id 2, 50 cantidades solcitadas
+# Operador 2, id 2, 50
+# Operador 3, id 2, 50
+# Operador 4 5 6: id 5
+# op4 20 cantidades
+# op5 10 unicades
+# op6 30 cant
+#Operador 7, 8 y 9 ingresan al id 8
+#solictan 15 productos
